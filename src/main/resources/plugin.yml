@@ -5,6 +5,7 @@ description: A plugin that can run actions when entering or leaving a region
 author: dkim19375
 softdepend:
   - PlaceholderAPI
+website: https://www.spigotmc.org/resources/regionborders.95000/
 
 commands:
   regionborders:

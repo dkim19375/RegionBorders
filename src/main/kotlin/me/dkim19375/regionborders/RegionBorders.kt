@@ -19,6 +19,7 @@
 package me.dkim19375.regionborders
 
 import io.github.slimjar.app.builder.ApplicationBuilder
+import me.dkim19375.dkimbukkitcore.checker.UpdateChecker
 import me.dkim19375.dkimbukkitcore.config.ConfigFile
 import me.dkim19375.dkimbukkitcore.function.logInfo
 import me.dkim19375.dkimbukkitcore.javaplugin.CoreJavaPlugin
@@ -32,6 +33,7 @@ import me.dkim19375.regionborders.enumclass.ExecutionType
 import me.dkim19375.regionborders.listener.PlayerMoveListener
 import org.bukkit.Bukkit
 import org.bukkit.configuration.serialization.ConfigurationSerialization
+import java.util.logging.Level
 import kotlin.system.measureTimeMillis
 
 class RegionBorders : CoreJavaPlugin() {
@@ -43,6 +45,7 @@ class RegionBorders : CoreJavaPlugin() {
         ActionType::class.java,
         ExecutionType::class.java,
     ).plus(ActionType.values().map(ActionType::jClass))
+    private val updateChecker = UpdateChecker("95000", null, this)
     override val defaultConfig: Boolean = false
 
     override fun reloadConfig() {
@@ -67,11 +70,28 @@ class RegionBorders : CoreJavaPlugin() {
         registerCommand("regionborders", RegionBordersCmd(this), RegionBordersTab(this))
         registerListener(PlayerMoveListener(this))
         Bukkit.getScheduler().runTask(this, this::reloadConfig)
+        Bukkit.getScheduler().runTask(this, this::checkForUpdates)
     }
 
     override fun onDisable() {
         unregisterSerializable()
         unregisterConfig(regionFile)
+    }
+
+    private fun checkForUpdates() {
+        updateChecker.getSpigotVersion({ version ->
+            if (version == description.version) {
+                logInfo("${description.name} is up to date! ($version)")
+                return@getSpigotVersion
+            }
+            logInfo("${description.name} is outdated!", Level.WARNING)
+            logInfo("Your version: ${description.version}", Level.WARNING)
+            logInfo("Newest version: $version", Level.WARNING)
+            logInfo("Please update here: ${description.website}", Level.WARNING)
+        }) {
+            logInfo("Could not get latest version!", Level.SEVERE)
+            it.printStackTrace()
+        }
     }
 
     private fun registerSerializable() = serializableClasses.forEach(ConfigurationSerialization::registerClass)
