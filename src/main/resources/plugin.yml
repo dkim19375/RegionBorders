@@ -1,0 +1,24 @@
+name: RegionBorders
+main: me.dkim19375.regionborders.RegionBorders
+version: ${pluginVersion}
+description: A plugin that can run actions when entering or leaving a region
+author: dkim19375
+softdepend:
+  - PlaceholderAPI
+
+commands:
+  regionborders:
+    description: Main command
+    aliases:
+      - rb
+    usage: /regionborders help
+
+permissions:
+  regionborders.command:
+    description: Run the command
+  regionborders.reload:
+    description: Reload the data and config files
+  regionborders.edit:
+    description: Create, edit, or list regions
+  regionborders.delete:
+    description: Delete a region
