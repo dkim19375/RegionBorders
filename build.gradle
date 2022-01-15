@@ -36,7 +36,7 @@ dependencies {
     compileOnly 'me.clip:placeholderapi:2.10.10'
     compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
 
-    implementation('io.github.dkim19375:dkim-bukkit-core:3.3.31') {
+    implementation('io.github.dkim19375:dkim-bukkit-core:3.3.32') {
         exclude group: 'org.jetbrains.kotlin'
         exclude group: 'org.jetbrains.kotlinx'
     }
