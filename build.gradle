@@ -46,7 +46,7 @@ dependencies {
 
     slim 'net.kyori:adventure-text-serializer-gson:4.9.3'
     slim 'net.kyori:adventure-text-serializer-legacy:4.10.0'
-    slim 'net.kyori:adventure-platform-bukkit:4.0.1'
+    slim 'net.kyori:adventure-platform-bukkit:4.1.0'
     //noinspection GradlePackageUpdate
     slim 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
     //noinspection GradlePackageUpdate
