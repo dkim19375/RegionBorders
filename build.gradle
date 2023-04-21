@@ -1,5 +1,5 @@
 plugins {
-    id 'com.github.johnrengelman.shadow' version '8.1.0'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
     id 'org.jetbrains.kotlin.jvm' version '1.8.20'
     id 'org.cadixdev.licenser' version '0.6.1'
     id 'io.github.slimjar' version '1.3.0'
@@ -33,20 +33,20 @@ repositories {
 
 dependencies {
     compileOnly 'org.jetbrains:annotations:24.0.1'
-    compileOnly 'me.clip:placeholderapi:2.11.2'
+    compileOnly 'me.clip:placeholderapi:2.11.3'
     compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
 
     implementation('io.github.dkim19375:dkim-bukkit-core:3.3.45') {
         exclude group: 'org.jetbrains.kotlin'
         exclude group: 'org.jetbrains.kotlinx'
     }
-    implementation('org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10') {
+    implementation('org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20') {
         exclude module: 'annotations'
     }
 
     slim 'net.kyori:adventure-text-serializer-gson:4.13.1'
-    slim 'net.kyori:adventure-text-serializer-legacy:4.12.0'
-    slim 'net.kyori:adventure-platform-bukkit:4.2.0'
+    slim 'net.kyori:adventure-text-serializer-legacy:4.13.1'
+    slim 'net.kyori:adventure-platform-bukkit:4.3.0'
     //noinspection GradlePackageUpdate
     slim 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
     //noinspection GradlePackageUpdate
