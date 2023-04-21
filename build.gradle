@@ -43,6 +43,7 @@ dependencies {
     implementation('org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20') {
         exclude module: 'annotations'
     }
+    implementation slimjar("1.2.6")
 
     slim 'net.kyori:adventure-text-serializer-gson:4.13.1'
     slim 'net.kyori:adventure-text-serializer-legacy:4.13.1'
