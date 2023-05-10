@@ -18,13 +18,13 @@
 
 package me.dkim19375.regionborders.data
 
-import me.dkim19375.dkimbukkitcore.config.ConfigFile
+import me.dkim19375.dkimbukkitcore.config.SpigotConfigFile
 import me.dkim19375.regionborders.RegionBorders
 import org.bukkit.Location
 
 class RegionFileManager(private val plugin: RegionBorders) {
     val creatingRegions = mutableMapOf<String, Location>()
-    private val file: ConfigFile
+    private val file: SpigotConfigFile
         get() = plugin.regionFile
     var regions: Set<RegionData> = emptySet()
         private set
