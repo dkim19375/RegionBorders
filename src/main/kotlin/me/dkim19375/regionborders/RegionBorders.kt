@@ -20,7 +20,7 @@ package me.dkim19375.regionborders
 
 import io.github.slimjar.app.builder.ApplicationBuilder
 import me.dkim19375.dkimbukkitcore.checker.UpdateChecker
-import me.dkim19375.dkimbukkitcore.config.ConfigFile
+import me.dkim19375.dkimbukkitcore.config.SpigotConfigFile
 import me.dkim19375.dkimbukkitcore.function.logInfo
 import me.dkim19375.dkimbukkitcore.javaplugin.CoreJavaPlugin
 import me.dkim19375.regionborders.command.RegionBordersCmd
@@ -37,7 +37,7 @@ import java.util.logging.Level
 import kotlin.system.measureTimeMillis
 
 class RegionBorders : CoreJavaPlugin() {
-    val regionFile by lazy { ConfigFile(this, "regions.yml") }
+    val regionFile by lazy { SpigotConfigFile(this, dataFolder.resolve("regions.yml")) }
     val regionManager by lazy { RegionFileManager(this) }
     private val serializableClasses = listOf(
         RegionData::class.java,
