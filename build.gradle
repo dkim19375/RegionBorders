@@ -45,7 +45,7 @@ dependencies {
     }
     implementation slimjar("1.2.6")
 
-    slim 'net.kyori:adventure-text-serializer-gson:4.13.1'
+    slim 'net.kyori:adventure-text-serializer-gson:4.14.0'
     slim 'net.kyori:adventure-text-serializer-legacy:4.13.1'
     slim 'net.kyori:adventure-platform-bukkit:4.3.0'
     //noinspection GradlePackageUpdate
