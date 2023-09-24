@@ -33,7 +33,7 @@ repositories {
 
 dependencies {
     compileOnly 'org.jetbrains:annotations:24.0.1'
-    compileOnly 'me.clip:placeholderapi:2.11.3'
+    compileOnly 'me.clip:placeholderapi:2.11.4'
     compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
 
     implementation('io.github.dkim19375:dkim-bukkit-core:3.4.3') {
