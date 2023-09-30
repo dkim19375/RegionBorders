@@ -122,7 +122,7 @@ enum class ActionType(
                 sender.sendMessage(ErrorType.NOT_ENOUGH_ARGS)
                 return@action null
             }
-            val face = runCatchingOrNull { BlockFace.valueOf(args[5].uppercase()) } ?: run {
+            val face = runCatchingOrNull { BlockFace.valueOf(args[5].uppercase()) } ?: Unit.run {
                 sender.sendMessage("${ChatColor.RED}Invalid face! (North/East/South/West/Up/Down/NorthEast/etc)")
                 return@action null
             }
@@ -138,7 +138,7 @@ enum class ActionType(
                 sender.sendMessage(ErrorType.NOT_ENOUGH_ARGS)
                 return@action null
             }
-            val sound = runCatchingOrNull { Sound.valueOf(args[5].uppercase()) } ?: run {
+            val sound = runCatchingOrNull { Sound.valueOf(args[5].uppercase()) } ?: Unit.run {
                 sender.sendMessage("${ChatColor.RED}Invalid sound!")
                 return@action null
             }
